@@ -24,7 +24,8 @@ public class EmployeeService : IEmployeeService
     var employee = new Employee
     {
         Name = employeeDto.Name,
-        Email = employeeDto.Email
+        Email = employeeDto.Email,
+        DepartmentId = employeeDto.DepartmentId
     };
 
     await _employeeRepository.AddEmployee(employee);

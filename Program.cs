@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.OpenApi.Models;
 using EnterprisePlatform.Services;
 using EnterprisePlatform.Services.Implementations;
+using EnterprisePlatform.Services.Interfaces;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
@@ -54,6 +55,8 @@ builder.Services.AddScoped<IProjectService, ProjectService>();
 builder.Services.AddScoped<IClientService, ClientService>();
 builder.Services.AddScoped<IResourceDemandService, ResourceDemandService>();
 builder.Services.AddScoped<IResourceDemandRepository, ResourceDemandRepository>();
+builder.Services.AddScoped<IAllocationService, AllocationService>();
+builder.Services.AddScoped<IAllocationRepository, AllocationRepository>();
 
 builder.Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
