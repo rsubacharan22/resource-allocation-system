@@ -11,6 +11,7 @@ obj/
 # User files
 *.user
 *.suo
+*.rsuser
 
 # Logs
 *.log
@@ -19,6 +20,16 @@ obj/
 .env
 .env.*
 
-# Secrets
-appsettings.Development.json
+# ASP.NET Secrets
 appsettings.json
+appsettings.Development.json
+
+# Publish output
+publish/
+
+# Node modules (if frontend added later)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
