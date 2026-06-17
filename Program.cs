@@ -57,6 +57,9 @@ builder.Services.AddScoped<IResourceDemandService, ResourceDemandService>();
 builder.Services.AddScoped<IResourceDemandRepository, ResourceDemandRepository>();
 builder.Services.AddScoped<IAllocationService, AllocationService>();
 builder.Services.AddScoped<IAllocationRepository, AllocationRepository>();
+builder.Services.AddScoped<IUtilizationRepository, UtilizationRepository>();
+builder.Services.AddScoped<IUtilizationService, UtilizationService>();
+builder.Services.AddScoped<IRecommendationService,RecommendationService>();
 
 builder.Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

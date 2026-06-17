@@ -14,4 +14,5 @@ public class AppDbContext : DbContext
     public DbSet<ResourceDemand> ResourceDemands { get; set; }
     public DbSet<AuditLog> AuditLogs {get; set;}
     public DbSet<Allocation> Allocations { get; set; }
+    public DbSet<Utilization> Utilizations { get; set; }
 }
