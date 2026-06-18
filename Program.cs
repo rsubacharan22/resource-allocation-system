@@ -6,6 +6,7 @@ using Microsoft.OpenApi.Models;
 using EnterprisePlatform.Services;
 using EnterprisePlatform.Services.Implementations;
 using EnterprisePlatform.Services.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
@@ -60,6 +61,7 @@ builder.Services.AddScoped<IAllocationRepository, AllocationRepository>();
 builder.Services.AddScoped<IUtilizationRepository, UtilizationRepository>();
 builder.Services.AddScoped<IUtilizationService, UtilizationService>();
 builder.Services.AddScoped<IRecommendationService,RecommendationService>();
+builder.Services.AddScoped<IDashboardService,DashboardService>();
 
 builder.Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

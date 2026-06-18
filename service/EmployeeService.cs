@@ -12,21 +12,23 @@ public class EmployeeService : IEmployeeService
     var employees =
         await _employeeRepository.GetAllEmployees();
 
-    return employees.Select(e => new EmployeeDto
-    {
-        Id = e.Id,
-        Name = e.Name
-    }).ToList();
+    return employees.Select(employee => new EmployeeDto
+{
+    Id = employee.Id,
+    Name = employee.Name,
+    Skill = employee.Skill
+}).ToList();
 }
 
     public async Task AddEmployee(CreateEmployeeDto employeeDto)
 {
     var employee = new Employee
-    {
-        Name = employeeDto.Name,
-        Email = employeeDto.Email,
-        DepartmentId = employeeDto.DepartmentId
-    };
+{
+    Name = employeeDto.Name,
+    Email = employeeDto.Email,
+    DepartmentId = employeeDto.DepartmentId,
+    Skill = employeeDto.Skill
+};
 
     await _employeeRepository.AddEmployee(employee);
 }

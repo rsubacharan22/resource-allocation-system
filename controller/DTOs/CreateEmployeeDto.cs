@@ -10,4 +10,7 @@ public class CreateEmployeeDto
     public string Email { get; set; } = string.Empty;
 
     public int DepartmentId { get; set; }
+
+    [Required]
+    public string Skill { get; set; } = string.Empty;
 }

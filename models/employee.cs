@@ -8,5 +8,7 @@ public class Employee
 
     public int DepartmentId { get; set; }
 
+    public string Skill { get; set; } = string.Empty;
+
     public Department Department { get; set; } = null!;
 }

@@ -32,6 +32,19 @@ namespace EnterprisePlatform.Services.Implementations
                 AllocationDate = System.DateTime.UtcNow
             };
 
+            var exists =
+    (await _allocationRepository.GetAllAllocations())
+    .Any(x =>
+        x.EmployeeId == createAllocationDto.EmployeeId &&
+        x.ResourceDemandId ==
+            createAllocationDto.ResourceDemandId);
+
+if (exists)
+{
+    throw new Exception(
+        "Employee already allocated to this demand");
+}
+
             await _allocationRepository.AddAllocation(allocation);
         }
     }
